@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    backend:
+        env_file: .env
+        build:
+            context: ./backend
+            args:
+                http_proxy: ${http_proxy}
+                https_proxy: ${https_proxy}
+        ports:
+            - 5000:5000
+        tty: true
+        volumes:
+            - ${directory_path}\backend:/workspace
+
+    frontend:
+        env_file: .env
+        build:
+            context: ./frontend
+            args:
+                http_proxy: ${http_proxy}
+                https_proxy: ${https_proxy}
+        ports:
+            - 3000:3000
+        tty: true
+        volumes:
+            - ${directory_path}\frontend:/workspace
