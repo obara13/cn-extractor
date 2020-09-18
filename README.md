@@ -8,7 +8,6 @@ Create `.env` file for docker compose. Like below.
 ```
 http_proxy=(proxy url)  # if needed.
 https_proxy=(proxy url)  # if needed.
-directory_path=(path to cn-extractor)
 ```
 
 Then, run docker compose.
